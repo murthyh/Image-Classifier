@@ -16,10 +16,7 @@ from PIL import Image
 use_gpu = torch.cuda.is_available
 
 def process_image(image):
-    ''' Scales, crops, and normalizes a PIL image for a PyTorch model,
-        returns an Numpy array
-    '''
-    
+        
     # TODO: Process a PIL image for use in a PyTorch model
 
     size = 256, 256
@@ -81,9 +78,8 @@ def load_checkpoint(args):
     return model, class_to_idx, idx_to_class
 
 def predict(args, image_path, model, class_to_idx, idx_to_class, cat_to_name, topk=5):
-    ''' Predict the class (or classes) of an image using a trained deep learning model.
-    '''
     
+   
     # TODO: Implement the code to predict the class from an image file
     
     image = torch.FloatTensor([process_image(Image.open(image_path))])
